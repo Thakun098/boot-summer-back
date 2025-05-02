@@ -3,10 +3,10 @@ require("dotenv/config");
 const app = express();
 const db = require("./app/models");
 
-db.sequelize.sync({ force: true }
-    .then(() => {
-        console.log.log("Database Sync...")
-    }));
+db.sequelize.sync({ force: true})
+.then(() => {
+    console.log("Database Sync...")
+});
 
 app.get('/', (req, res) => {
     res.send('Hello Elyia');

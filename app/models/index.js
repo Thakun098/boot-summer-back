@@ -22,16 +22,16 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.user = require("./users.model")(sequelize, Sequelize);
-db.role = require("./roles.model")(sequelize, Sequelize);
-db.user_roles = require("./users_roles.model")(sequelize, Sequelize);
+db.user = require("./ีuser.model")(sequelize, Sequelize);
+db.role = require("./role.model")(sequelize, Sequelize);
+db.user_roles = require("./user_roles.model")(sequelize, Sequelize);
 
 //Relationship (Many to Many)
 db.role.belongsToMany(db.user, {
-    throught: "user_roles"
+    through: "user_roles"
 });
 db.user.belongsToMany(db.role, {
-    throught: "user_roles"
+    through: "user_roles"
 });
 
 module.exports = db;

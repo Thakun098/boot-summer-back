@@ -2,11 +2,16 @@ const express = require("express");
 require("dotenv/config");
 const app = express();
 const db = require("./app/models");
+const cors = require("cors");
 
-db.sequelize.sync({ force: true }
+app.use(cors({ origin: "*" }));
+app.use(express.json());
+
+
+db.sequelize.sync({ force: false })
     .then(() => {
-        console.log.log("Database Sync...")
-    }));
+        console.log("Database Sync...")
+    })
 
 app.get('/', (req, res) => {
     res.send('Hello Elyia');

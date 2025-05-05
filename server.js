@@ -4,6 +4,7 @@ const app = express();
 const db = require("./app/models");
 const cors = require("cors");
 
+<<<<<<< HEAD
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
@@ -12,6 +13,12 @@ db.sequelize.sync({ force: false })
     .then(() => {
         console.log("Database Sync...")
     })
+=======
+db.sequelize.sync({ force: true})
+.then(() => {
+    console.log("Database Sync...")
+});
+>>>>>>> 503c6d257c06e9c0b7b5fb7e6dad6e5d0c123855
 
 app.get('/', (req, res) => {
     res.send('Hello Elyia');

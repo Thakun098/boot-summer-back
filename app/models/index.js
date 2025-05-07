@@ -22,14 +22,14 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-<<<<<<< HEAD
+
 db.user = require("../models/ีusers.model")(sequelize, Sequelize);
 db.role = require("./roles.model")(sequelize, Sequelize);
 =======
 db.user = require("./ีuser.model")(sequelize, Sequelize);
 db.role = require("./role.model")(sequelize, Sequelize);
 db.user_roles = require("./user_roles.model")(sequelize, Sequelize);
->>>>>>> 503c6d257c06e9c0b7b5fb7e6dad6e5d0c123855
+
 
 //Relationship (Many to Many)
 db.role.belongsToMany(db.user, {
